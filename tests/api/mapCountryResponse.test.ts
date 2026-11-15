@@ -51,4 +51,46 @@ describe('mapCountryResponse', () => {
 
     expect(mapCountryResponse(rawCountry).languages).toEqual([]);
   });
+
+  it('should map additional country details', () => {
+    const rawCountry = {
+      name: 'Spain',
+      flag: '🇪🇸',
+      capital: 'Madrid',
+      region: 'Europe',
+      population: 47351567,
+      languages: [{ name: 'Spanish' }],
+      subregion: 'Southern Europe',
+      nativeName: 'España',
+      area: 505992,
+      borders: ['AND', 'FRA', 'GIB', 'PRT'],
+      currencies: [
+        {
+          code: 'EUR',
+          name: 'Euro',
+          symbol: '€',
+        },
+      ],
+    };
+
+    expect(mapCountryResponse(rawCountry)).toEqual({
+      name: 'Spain',
+      flag: '🇪🇸',
+      capital: 'Madrid',
+      region: 'Europe',
+      population: 47351567,
+      languages: ['Spanish'],
+      subregion: 'Southern Europe',
+      nativeName: 'España',
+      area: 505992,
+      borders: ['AND', 'FRA', 'GIB', 'PRT'],
+      currencies: [
+        {
+          code: 'EUR',
+          name: 'Euro',
+          symbol: '€',
+        },
+      ],
+    });
+  });
 });
