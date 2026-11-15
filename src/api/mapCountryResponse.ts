@@ -1,4 +1,4 @@
-import type { CountryCard, Currency } from '../types/country';
+import type { CountryCard, Currency } from '../types/country.js';
 
 interface RawCountry {
   name: string;

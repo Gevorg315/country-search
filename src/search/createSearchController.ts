@@ -1,9 +1,9 @@
-import { mapCountryResponse } from '../api/mapCountryResponse';
-import { searchCountries } from '../api/searchCountries';
-import type { CountryCard } from '../types/country';
-import { createRequestSignal } from '../utils/createRequestSignal';
-import { debounce } from '../utils/debounce';
-import { classifySearchError } from '../utils/searchError';
+import { mapCountryResponse } from '../api/mapCountryResponse.js';
+import { searchCountries } from '../api/searchCountries.js';
+import type { CountryCard } from '../types/country.js';
+import { createRequestSignal } from '../utils/createRequestSignal.js';
+import { debounce } from '../utils/debounce.js';
+import { classifySearchError } from '../utils/searchError.js';
 
 export type SearchStatus = 'idle' | 'loading' | 'success' | 'empty' | 'error';
 
